@@ -11,7 +11,6 @@ export const UnordererList = styled('ul', {
   maxWidth: '650px',
   minWidth: '400px',
   position: 'relative',
-  transition: 'opacity 300ms ease-in-out',
   li: {
     height: '50px',
     backdropFilter: 'blur(1.5px)',
@@ -73,7 +72,7 @@ const MainList: FC<MainAnimationListType> = ({
 }) => {
   const { items, remove, setCantPush, ...rest } = props;
   const ulRef = useRef<HTMLUListElement>(null);
-  const viewportPadding = 60;
+  const viewportPadding = 90;
 
   return (
     <UnordererList ref={ulRef} id={rest.id}>

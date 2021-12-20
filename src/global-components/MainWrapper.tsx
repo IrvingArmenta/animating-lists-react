@@ -29,7 +29,7 @@ const MainWrapper = styled('main', {
     right: 0,
     left: 0,
     bottom: 0,
-    padding: 8,
+    padding: 16,
     display: 'flex',
     justifyContent: 'center',
     fontSize: '12px',
@@ -47,9 +47,9 @@ const MainWrapper = styled('main', {
   },
   h1: {
     position: 'absolute',
-    top: 8,
-    left: 8,
-    fontSize: '48px',
+    top: 12,
+    left: 12,
+    fontSize: '52px',
     fontWeight: 700
   },
   'label, input[type=radio]': {

@@ -59,6 +59,7 @@ const App: FC<{ templateText?: string }> = () => {
               push({ id: nanoid(), title: `Item ${itemTitle}` });
             }}
             disabled={cantPush}
+            title={(cantPush && 'delete some items') || undefined}
           >
             Push item
           </button>

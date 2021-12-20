@@ -5,12 +5,21 @@ import isOutOfViewport from '../../../utils/isOutOfViewport';
 import { ReactComponent as DeleteIcon } from '../delete-icon.svg';
 import { animate } from 'motion';
 import NameHolder from '../NameHolder';
+import { useUpdateEffect } from 'react-use';
 
 const MotionJsList: FC<AnimationListCompType> = ({
   duration = { enter: 800, exit: 800 },
   ...props
 }) => {
   const { items, remove, setCantPush, viewportPadding, parentUlRef } = props;
+
+  useUpdateEffect(() => {
+    if (parentUlRef.current) {
+      if (!isOutOfViewport(parentUlRef.current, viewportPadding)) {
+        setCantPush(false);
+      }
+    }
+  }, [items.length]);
 
   return (
     <>
