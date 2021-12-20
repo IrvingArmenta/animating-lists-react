@@ -1,12 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import WebfontLoader from '@dr-kobros/react-webfont-loader';
+
+// webfontloader configuration object. *REQUIRED*.
+const config = {
+  google: {
+    families: ['Roboto Mono:300,600']
+  }
+};
+import 'destyle.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <WebfontLoader config={config}>
+      <App />
+    </WebfontLoader>
   </React.StrictMode>,
   document.getElementById('root')
 );
